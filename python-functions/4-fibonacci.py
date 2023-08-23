@@ -1,11 +1,16 @@
 #!/usr/bin/python3
 
 def fibonacci_sequence(n):
-    if n < 0:
-        print("Incorrect input")
-    elif n == 0:
-        return 0
-    elif n == 1 or n == 2:
-        return 1
-    else:
-        return fibonacci_sequence(n-1) + fibonacci_sequence(n-2)
+    if n <= 0:
+        return [0]
+    elif n == 1:
+        return [1]
+    elif n == 2:
+        return [0, 1]
+    sequence = [0, 1]
+
+    for i in range(2, n):
+        fib = sequence[-1] + sequence[-2]
+        sequence.append(fib)
+    
+    return sequence
