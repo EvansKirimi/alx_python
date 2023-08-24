@@ -4,9 +4,20 @@ def validate_password(password):
         if ' ' in password:
             return False
         else:
+            upper = False
+            lower = False
+            digit = False
             for char in password:
-                if char.isupper() or char.islower() and :
-                    return True
+                if char.isupper():
+                    upper = True
+                elif char.islower():
+                    lower = True
+                elif char.isdigit():
+                    digit = True
+            if (upper and lower and digit):
+                return True
+            else:
+                return False
                 
     else:
         return False
